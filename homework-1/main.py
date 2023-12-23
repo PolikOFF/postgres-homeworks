@@ -1,6 +1,7 @@
 """Скрипт для заполнения данными таблиц в БД Postgres."""
 import psycopg2
 import csv
+import os
 
 
 def get_data_from_csv(filename):
@@ -21,7 +22,7 @@ try:
         host='localhost',
         database='north',
         user='postgres',
-        password='4505'
+        password=os.getenv('SQL_KEY')
     ) as conn:
         with conn.cursor() as cur:
             for customer in range(len(customers)):

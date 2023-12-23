@@ -18,9 +18,9 @@ create table customers
 
 create table orders
 (
-	order_id int primary key
-	customer_id varchar(5) references customers(customer_id) NOT NULL
-	employee_id int references employees(employee_id) NOT NULL
-	order_date date NOT NULL
+	order_id int primary key,
+	customer_id varchar(5) references customers(customer_id) NOT NULL,
+	employee_id int references employees(employee_id) NOT NULL,
+	order_date date NOT NULL,
 	ship_city varchar(50) NOT NULL
 )
